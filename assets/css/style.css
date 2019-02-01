@@ -37,11 +37,6 @@ header
     margin-left: 5em;
 }
 
-#characters-row 
-{
-    /* border-bottom: 1px solid white;   */
-    /* border-top: 1px solid white;   */
-}
 
 #characters-row p, #battle-scene p
 {
@@ -63,7 +58,7 @@ padding:0px;
 
 .header-msg
 {
-    animation: header-msg 0.75s linear infinite;
+    animation: header-msg 1s linear infinite;
 }
 @keyframes header-msg{
     0%{opacity: 0;}

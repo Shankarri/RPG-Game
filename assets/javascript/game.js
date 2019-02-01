@@ -20,6 +20,7 @@ $(document).ready(function () {
         Incrementer:0, 
         damage : 0 
     } ;
+    initialize();
 
     function initialize()
     {
@@ -29,12 +30,6 @@ $(document).ready(function () {
         $(".battlePoints").hide();
         $(".header-msg").html( "Select your character");
     }
-
-
-    
-
-  
-
 
     $("#characters-row section").on("click", function (event) { 
         $(".battle").show();
@@ -66,8 +61,8 @@ $(document).ready(function () {
     
     $("#restartBtn").on("click", function (event) {
         window.location.reload();
-        
     });
+    
     $("#attackBtn").on("click", function (event) {
         
         if (enemy.secId != "" && enemy.HP>0 && user.HP>0) {
@@ -98,9 +93,10 @@ $(document).ready(function () {
         }
         if(user.HP <= 0)
         {
-            $(".header-msg").html( "<h3>You have been defeated. Please press the restart Button to start a new game<h3>");
+            $(".header-msg").html( "<p>You have been defeated.<br> <br> Please press the restart Button to start a new game<h5>");
             $("#enemy-char").empty();
-            $("#user-char").empty();
+            // $("#user-char").empty();
+            $("#attackBtn").hide();
             $("#restartBtn").show();
         }
          else if (enemy.HP <= 0 && enemy.secId != "")
@@ -117,9 +113,10 @@ $(document).ready(function () {
             };
             if($("#characters-row section").length == 0)
             {
-                $(".header-msg").html( "<h3>You are the winner. You have defected all the enemies  Please press the restart Button to start a new game<h3>");
+                console.log ("$('#characters-row section').length",$("#characters-row section").length);
+                $(".header-msg").html( "<h5>You are the winner. <br> <br>You have defected all the enemies  Please press the restart Button to start a new game<h5>");
                 $("#enemy-char").empty();
-                $("#user-char").empty();
+                $("#attackBtn").hide();
                 $("#restartBtn").show();
             }
         }
