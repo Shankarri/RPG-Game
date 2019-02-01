@@ -1,4 +1,72 @@
 body
 {
-    background: lightgrey;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    background-image: url("../images/Fighting_Background_3.gif");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    font-family: 'Courgette', cursive;
+    text-align: center;
 }
+.container
+{
+    height:100vh;
+    margin-left: 0px;
+}
+.header-font
+{
+    font-family: 'Press Start 2P';
+    background-color: black;
+    padding:2px;
+}
+header
+{
+    text-align: center;
+    color : red;
+    width: 50%;
+    margin : auto;
+}
+
+.imgcol
+{
+    border: 1px solid red;  
+    background-color: black;
+    padding:0px;
+    margin-left: 5em;
+}
+
+#characters-row 
+{
+    /* border-bottom: 1px solid white;   */
+    /* border-top: 1px solid white;   */
+}
+
+#characters-row p, #battle-scene p
+{
+margin:0px;
+padding:0px;
+}
+#characters-row img, #battle-scene img
+{
+    /* height: 80%;
+    width: 25%; */
+    margin :2px;
+    height: 80px;
+
+}
+#btn    
+{
+    border-bottom: 1px solid white;  
+}
+
+.header-msg
+{
+    animation: header-msg 0.75s linear infinite;
+}
+@keyframes header-msg{
+    0%{opacity: 0;}
+    50%{opacity: .5;}
+    100%{opacity: 1;}
+    }

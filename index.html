@@ -1,14 +1,101 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>RPG Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RPG Game</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <script src="assets/javascript/game.js"></script>
+
 </head>
+
 <body>
-    
+    <header>
+        <h5 class="mainHeader mt-2 header-font">RPG GAME MODE</h5>
+    </header>
+    <div class="container">
+        <div class="row align-middle" id="header-row">
+                <div class="col-md-2"></div>
+            <div class="col-md-10">
+                <p class="header-msg header-font"></p>
+            </div>
+        </div>
+        <div class="row my-2 battle" id="battle-scene-header">
+                <div class="col-md-4  header-font"> <h5> Your Character</h5> </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4  header-font"><h5> Defender </h5></div>
+        </div>
+        <audio id="battle_Sound">
+                <source src="assets/images/attack_sound.mp3" type="audio/mpeg">
+            </audio>
+        <div class="row battle" id="battle-scene">
+            <div class="col-md-3" id="user-char"> </div>
+            <div class="col-md-3" id="user-attack"> </div>
+            <div class="col-md-3" id="enemy-attack"> </div>
+            <div class="col-md-3" id="enemy-char"> </div>
+        
+        </div>
+        <div class="row battle pb-3">
+            <div class="col-md-4"></div>
+            <div class="col-md-2">
+                <button type="button" id="attackBtn" class="btn btn-dark btn-lg">Attack</button>
+            </div><div class="col-md-2">
+                <button type="button" id="restartBtn" class="btn btn-dark btn-lg">Restart</button>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="row battle my-2">
+                <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h6 class="header-font"> Enemies Available for Attack</h6>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="row" id="characters-row">
+            <div class="col-md-3">
+                <section id ="natsu_Details" class="imgcol text-warning" data-hp="180" data-attack="25" >
+                    <p> Natsu Drageel</p>
+                    <img src="assets/images/Natsu.jpg" id="natsuImg" />
+                    <p> Power : Fire Magic</p>
+                    <p> Health Points : 180</p>
+                </section>
+            </div>
+            <div class="col-md-3">
+                <section class="imgcol text-info" id ="grey_Details" data-hp="120" data-attack="15">
+                    <p>Grey Fullbuster</p>
+                    <img src="assets/images/Grey_2.jpg" id="greyImg" />
+                    <p> Power : Ice Magic </p>
+                    <p> Health Points : 120</p>
+                </section>
+            </div>
+            <div class="col-md-3">
+                <section class="imgcol text-success" id ="lucy_Details" data-hp="100" data-attack="10">
+                    <p> Lucy Heartfilia</p>
+                    <img src="assets/images/Lucy.jpg" id="lucyImg" />
+                    <p> Power : Celestial Magic</p>
+                    <p> Health Points : 100</p>
+                </section>
+            </div>
+            <div class="col-md-3">
+                <section class="imgcol text-danger" id ="erza_Details" data-hp="150" data-attack="20">
+                <p>Erza scarlet</p>
+                <img src="assets/images/Erza_2.jpg" id="erzaImg" />
+                <p> Power : Weapons Magic </p>
+                <p> Health Points : 150</p>
+            </section>
+            </div>
+        </div>
+
+    </div>
+
 </body>
+
 </html>
