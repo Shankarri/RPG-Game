@@ -1,8 +1,8 @@
+/* Basic Style to apply over the main content */
 body
 {
     background-color: black;
     color: white;
-    font-weight: bold;
     background-image: url("../images/Fighting_Background_3.gif");
     background-repeat: no-repeat;
     background-size: 100%;
@@ -10,25 +10,42 @@ body
     font-family: 'Courgette', cursive;
     text-align: center;
 }
+
+/* Container Height for mainting background image in middle*/
 .container
 {
     height:100vh;
     margin-left: 0px;
 }
-.header-font
+
+/* Style for Main Header with game name */
+.mainHeader
 {
-    font-family: 'Press Start 2P';
-    background-color: black;
-    padding:2px;
-}
-header
-{
+    font-family: 'Teko', cursive;
+    font-size: 3em;
     text-align: center;
     color : red;
     width: 50%;
     margin : auto;
 }
 
+/* Style for Messages displayed to user */
+.display-msg
+{
+    font-family: 'Press Start 2P';
+    background-color: black;
+}
+
+/* Style for header content in the battle scene */
+.header-font
+{
+    font-family: 'Fredoka One', cursive;
+    font-size: 2em;
+    background-color: black;
+    padding:2px;
+}
+
+/* Character Image outside border and alignment */
 .imgcol
 {
     border: 1px solid red;  
@@ -37,31 +54,18 @@ header
     margin-left: 5em;
 }
 
-
+/* Text alignment for the Character*/
 #characters-row p, #battle-scene p
 {
-margin:0px;
-padding:0px;
+    margin:0px;
+    padding:0px;
 }
+
+/* Character Image alignment inside border */
 #characters-row img, #battle-scene img
 {
-    /* height: 80%;
-    width: 25%; */
+
     margin :2px;
     height: 80px;
 
 }
-#btn    
-{
-    border-bottom: 1px solid white;  
-}
-
-.header-msg
-{
-    animation: header-msg 1s linear infinite;
-}
-@keyframes header-msg{
-    0%{opacity: 0;}
-    50%{opacity: .5;}
-    100%{opacity: 1;}
-    }

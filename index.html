@@ -6,99 +6,127 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RPG Game</title>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Google fonts  links for the different Fonts used-->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Courgette|Pacifico" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Teko" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
+
+
+    <!-- Css and Images link for the html-->
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" /> -->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <script src="assets/javascript/game.js"></script>
 
 </head>
 
 <body>
+    <!-- Main Header with Game Name-->
     <header>
-        <h5 class="mainHeader mt-2 header-font">RPG GAME MODE</h5>
+        <h5 class="mainHeader mt-2">RPG GAME MODE</h5>
     </header>
+
+
     <div class="container">
+
+        <!-- Header row with display message for guiding the user  -->
         <div class="row align-middle" id="header-row">
-                <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
             <div class="col-md-10">
-                <p class="header-msg header-font"></p>
+                <p class="header-msg display-msg"></p>
             </div>
         </div>
+
+        <!-- Battle scene header with just user and defender title and Attack sound   -->
         <div class="row my-2 battle" id="battle-scene-header">
-                <div class="col-md-4  header-font"> <h5> Your Character</h5> </div>
-                <div class="col-md-4"></div>
-                <div class="col-md-4  header-font"><h5> Defender </h5></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3  header-font"> Your Character </div>
+            <div class="col-md-6">
+                <audio id="battle_Sound">
+                    <source src="assets/images/attack_sound.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="col-md-2  header-font"> Defender </div>
         </div>
-        <audio id="battle_Sound">
-                <source src="assets/images/attack_sound.mp3" type="audio/mpeg">
-            </audio>
+
+        <!-- Battle scene filled with empty div's which will later be filled with selected characters  -->
         <div class="row battle" id="battle-scene">
             <div class="col-md-3" id="user-char"> </div>
             <div class="col-md-3" id="user-attack"> </div>
             <div class="col-md-3" id="enemy-attack"> </div>
             <div class="col-md-3" id="enemy-char"> </div>
-        
         </div>
+
+        <!-- Seperate row for Attack and Restart Buttons -->
         <div class="row battle pb-3">
             <div class="col-md-4"></div>
             <div class="col-md-2">
                 <button type="button" id="attackBtn" class="btn btn-dark btn-lg">Attack</button>
-            </div><div class="col-md-2">
+            </div>
+            <div class="col-md-2">
                 <button type="button" id="restartBtn" class="btn btn-dark btn-lg">Restart</button>
             </div>
             <div class="col-md-4"></div>
         </div>
+
+        <!-- Seperate row for Defender heading -->
         <div class="row battle my-2">
-                <div class="col-md-2"></div>
-            <div class="col-md-8">
-                <h6 class="header-font "> Enemies Available for Attack</h6>
+            <div class="col-md-4"></div>
+            <div class="col-md-6">
+                <h6 class="header-font"> Enemies Available for Attack</h6>
             </div>
             <div class="col-md-2"></div>
         </div>
+
+        <!-- Characters display row where we define each characters Details-->
         <div class="row" id="characters-row">
+
+            <!-- First Character - Strongest player-->
             <div class="col-md-3">
-                <section class="imgcol text-warning" id ="natsu_Details" data-intialAP = "20">
-                    <p> Natsu Drageel</p>
+                <section class="imgcol text-warning" id="natsu_Details" data-intialAP="10" data-counterAP="15">
+                    <p> Natsu Dragneel</p>
                     <p> Power : Fire Magic</p>
-                    <img src="assets/images/Natsu.jpg" id="natsuImg" />                    
-                    <p> Health Points :  <span id="natsuHP"> 180</span></p>
-                    <p class ="battlePoints">  Damage received : <span  id="natsuDamage">0 </span></p>
-                    <p class ="battlePoints"> Attack Power : <span id="natsuAP"> 20</span></p>
+                    <img src="assets/images/Natsu.jpg" id="natsuImg" />
+                    <p> Health Points : <span id="natsuHP"> 120</span></p>
+                    <p class="battlePoints"> Damage received : <span id="natsuDamage">0 </span></p>
                 </section>
             </div>
+
+            <!-- Second Character - Weak  player-->
             <div class="col-md-3">
-                <section class="imgcol text-info" id ="grey_Details" data-intialAP = "15">
+                <section class="imgcol text-info" id="grey_Details" data-intialAP="6" data-counterAP="10">
                     <p>Grey Fullbuster</p>
                     <p> Power : Ice Magic </p>
                     <img src="assets/images/Grey_2.jpg" id="greyImg" />
                     <p> Health Points :<span id="greyHP"> 100</span></p>
-                    <p class ="battlePoints">  Damage received : <span  id="greyDamage"> 0</span></p>
-                    <p class ="battlePoints"> Attack Power : <span id="greyAP"> 15</span></p>
+                    <p class="battlePoints"> Damage received : <span id="greyDamage"> 0</span></p>
                 </section>
             </div>
+
+            <!-- Third Character - Normal Player-->
             <div class="col-md-3">
-                <section class="imgcol text-success" id ="lucy_Details" data-intialAP = "10">
+                <section class="imgcol text-success" id="lucy_Details" data-intialAP="12" data-counterAP="12">
                     <p> Lucy Heartfilia</p>
                     <p> Power : Celestial Magic</p>
                     <img src="assets/images/Lucy.jpg" id="lucyImg" />
-                    <p> Health Points :<span id="lucyHP"> 120</span></p>
-                    <p class ="battlePoints">  Damage received : <span  id="lucyDamage">0 </span></p>
-                    <p class ="battlePoints"> Attack Power : <span id="lucyAP"> 10</span></p>
+                    <p> Health Points :<span id="lucyHP"> 90</span></p>
+                    <p class="battlePoints"> Damage received : <span id="lucyDamage">0 </span></p>
                 </section>
             </div>
+
+            <!-- Fourth Character - Strong Player-->
             <div class="col-md-3">
-                <section class="imgcol text-danger" id ="erza_Details" data-intialAP = "25">
-                <p>Erza scarlet</p>
-                <p> Power : Weapons Magic </p>
-                <img src="assets/images/Erza_2.jpg" id="erzaImg" />
-                <p> Health Points :<span id="erzaHP"> 150</span></p>
-                <p class ="battlePoints">  Damage received : <span  id="erzaDamage">0 </span></p>
-                <p class ="battlePoints"> Attack Power : <span id="erzaAP"> 25</span></p>
-            </section>
+                <section class="imgcol text-danger" id="erza_Details" data-intialAP="8" data-counterAP="13">
+                    <p>Erza scarlet</p>
+                    <p> Power : Weapons Magic </p>
+                    <img src="assets/images/Erza_2.jpg" id="erzaImg" />
+                    <p> Health Points :<span id="erzaHP"> 110</span></p>
+                    <p class="battlePoints"> Damage received : <span id="erzaDamage">0 </span></p>
+                </section>
             </div>
         </div>
 
